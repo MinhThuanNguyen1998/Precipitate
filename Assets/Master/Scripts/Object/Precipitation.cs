@@ -13,8 +13,8 @@ public class Precipitation : MonoBehaviour
     private float m_PrecipitateDuration = 4f;
 
     private bool m_HasPrecipitated = false;
-    private void OnEnable() => PipetStateController.OnLiquidReacted += Precipitate;
-    private void OnDisable() => PipetStateController.OnLiquidReacted -= Precipitate;
+    private void OnEnable() => DropletTrigger.OnLiquidReacted += Precipitate;
+    private void OnDisable() => DropletTrigger.OnLiquidReacted -= Precipitate;
 
     private void Precipitate(LiquidType liquidType)
     {

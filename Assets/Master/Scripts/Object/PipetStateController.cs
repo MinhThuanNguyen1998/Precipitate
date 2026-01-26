@@ -5,9 +5,8 @@ public class PipetStateController : MonoBehaviour
 {
     public static event Action OnFilled;
     public static event Action OnEmptied;
-    public static event Action<LiquidType> OnLiquidReacted;
+    public static event Action OnDropletSpawned;
     [SerializeField] private PipetTrigger m_PipetTrigger;
-    public PipetState PipetState;
     private PipetState m_CurrentState;
 
     private LiquidType m_FilledLiquid;
@@ -49,17 +48,13 @@ public class PipetStateController : MonoBehaviour
     {
         if (!m_PipetTrigger.IsInTube) return;
         m_FilledLiquid = m_PipetTrigger.CurrentLiquid;
+        FilledLiquidType.Liquid = m_FilledLiquid;
         Debug.Log("Filled: " + m_FilledLiquid);
         SetState(PipetState.Filled);
     }
     private void TryRelease()
     {
-        if (m_PipetTrigger.IsInTube)
-        {
-            Debug.Log("Released: " + m_PipetTrigger.CurrentLiquid);
-            if (m_PipetTrigger.CurrentLiquid != m_FilledLiquid) OnLiquidReacted?.Invoke(m_PipetTrigger.CurrentLiquid);
-        }
-        else Debug.Log("Empty");
+        OnDropletSpawned?.Invoke();
         SetState(PipetState.Empty);
     }
 }
