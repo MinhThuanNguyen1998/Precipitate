@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7342451957136529388}
+  - component: {fileID: 2346994050554891042}
   m_Layer: 0
   m_Name: AGNO3_NACL
   m_TagString: Untagged
@@ -35,6 +36,20 @@ Transform:
   - {fileID: 8965211377472694784}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2346994050554891042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693037251085322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57850c25070cac4383a7023fea9fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LiquidVolumeAgNo3: {fileID: 669277494570306450}
+  m_LiquidVolumeNaCl: {fileID: 7402403967342475340}
 --- !u!1 &117784012563607084
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +939,7 @@ GameObject:
   - component: {fileID: 2671266950596527417}
   - component: {fileID: 6006676387760491904}
   - component: {fileID: 5562487152812613793}
-  - component: {fileID: 4720807808109050387}
+  - component: {fileID: 8002049843904375258}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1034,8 +1049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df800e932ee28b45b4b284261558a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PipetController: {fileID: 4720807808109050387}
---- !u!114 &4720807808109050387
+  m_PipetController: {fileID: 8002049843904375258}
+--- !u!114 &8002049843904375258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1044,7 +1059,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2455085381659030306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 695ecb3194f97144bbbf30192cd74c18, type: 3}
+  m_Script: {fileID: 11500000, guid: ec24ced1e82aa414f9da83890e712c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PipetTrigger: {fileID: 7918850501055302688}

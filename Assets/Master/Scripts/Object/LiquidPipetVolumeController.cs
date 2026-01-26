@@ -2,7 +2,7 @@ using System.Collections;
 using LiquidVolumeFX;
 using UnityEngine;
 
-public class LiquidVolumeController : MonoBehaviour
+public class LiquidPipetVolumeController : MonoBehaviour
 {
     [SerializeField] private LiquidVolume m_LiquidVolume;
     private bool m_IsProcessing = false;
@@ -12,13 +12,13 @@ public class LiquidVolumeController : MonoBehaviour
 
     private void OnEnable()
     {
-        PipetController.OnFilled += FillLiquid;
-        PipetController.OnEmptied += DrainLiquid;
+        PipetStateController.OnFilled += FillLiquid;
+        PipetStateController.OnEmptied += DrainLiquid;
     }
     private void OnDisable()
     {
-        PipetController.OnFilled -= FillLiquid;
-        PipetController.OnEmptied -= DrainLiquid;
+        PipetStateController.OnFilled -= FillLiquid;
+        PipetStateController.OnEmptied -= DrainLiquid;
     }
     private void FillLiquid()
     {

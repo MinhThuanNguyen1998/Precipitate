@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 public class PipetButton : MonoBehaviour
 {
-    [SerializeField] PipetController m_PipetController;
+    [SerializeField] PipetStateController m_PipetController;
     private Vector3 m_OriginalScale;
     private Tween m_ClickTween;
     private void Awake()

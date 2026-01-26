@@ -12,7 +12,6 @@ public class PipetTrigger : BaseTrigger
             IsInTube = true;
             var tubeLiquid = other.GetComponent<TubeLiquid>();
             CurrentLiquid = tubeLiquid != null? tubeLiquid.LiquidType: LiquidType.None;
-            
         }
     }
     protected override void OnExit(Collider other)

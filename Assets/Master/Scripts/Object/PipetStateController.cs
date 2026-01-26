@@ -1,30 +1,31 @@
-using System;
+﻿using System;
 using UnityEngine;
 
-public class PipetController : MonoBehaviour
+public class PipetStateController : MonoBehaviour
 {
     public static event Action OnFilled;
     public static event Action OnEmptied;
+    public static event Action<LiquidType> OnLiquidReacted;
     [SerializeField] private PipetTrigger m_PipetTrigger;
     public PipetState PipetState;
     private PipetState m_CurrentState;
-    
+
+    private LiquidType m_FilledLiquid;
+
     private void Start()
     {
         SetState(PipetState.Empty);
     }
-
     public void CheckStateWhenPipetClickButton()
     {
         if (m_CurrentState == PipetState.Empty && m_PipetTrigger.IsInTube)
         {
-            Debug.Log(m_PipetTrigger.CurrentLiquid);
-            SetState(PipetState.Filled);
+            TryFill();
             return;
         }
         if (m_CurrentState == PipetState.Filled)
         {
-            SetState(PipetState.Empty);
+            TryRelease();
             return;
         }
     }
@@ -35,13 +36,30 @@ public class PipetController : MonoBehaviour
         switch (m_CurrentState)
         {
             case PipetState.Empty:
-                Debug.Log("Empty");
+                //Debug.Log("Empty");
                 OnEmptied?.Invoke();
                 break;
             case PipetState.Filled:
-                Debug.Log("Filled");
+                //Debug.Log("Filled");
                 OnFilled?.Invoke();
                 break;
         }
+    }
+    private void TryFill()
+    {
+        if (!m_PipetTrigger.IsInTube) return;
+        m_FilledLiquid = m_PipetTrigger.CurrentLiquid;
+        Debug.Log("Filled: " + m_FilledLiquid);
+        SetState(PipetState.Filled);
+    }
+    private void TryRelease()
+    {
+        if (m_PipetTrigger.IsInTube)
+        {
+            Debug.Log("Released: " + m_PipetTrigger.CurrentLiquid);
+            if (m_PipetTrigger.CurrentLiquid != m_FilledLiquid) OnLiquidReacted?.Invoke(m_PipetTrigger.CurrentLiquid);
+        }
+        else Debug.Log("Empty");
+        SetState(PipetState.Empty);
     }
 }
