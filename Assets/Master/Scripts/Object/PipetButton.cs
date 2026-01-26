@@ -14,6 +14,7 @@ public class PipetButton : MonoBehaviour
     {
         //Debug.Log("Click");
         PlayClickAnimation();
+        if (MouseDragLock.IsBlocked) return;
         m_PipetController.CheckStateWhenPipetClickButton();
     }
     private void OnMouseUp()
