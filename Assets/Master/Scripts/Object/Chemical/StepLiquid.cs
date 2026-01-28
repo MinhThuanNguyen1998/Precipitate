@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StepLiquid : StepAtomicBase
+public class StepLiquid : StepBase
 {
     private void OnEnable()
     {

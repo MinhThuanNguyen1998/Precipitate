@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7342451957136529388}
   - component: {fileID: 2346994050554891042}
+  - component: {fileID: 6866390596450747709}
   m_Layer: 0
   m_Name: AGNO3_NACL
   m_TagString: Untagged
@@ -50,6 +51,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LiquidVolumeAgNo3: {fileID: 54804209910938069}
   m_LiquidVolumeNaCl: {fileID: 2430783822409162849}
+  m_Step_AgNo3_NaCl: {fileID: 6866390596450747709}
+--- !u!114 &6866390596450747709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693037251085322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd67c44bf1bc8d44b441cf7b5622b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &117784012563607084
 GameObject:
   m_ObjectHideFlags: 0

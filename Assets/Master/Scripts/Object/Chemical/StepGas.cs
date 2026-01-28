@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StepGas : StepAtomicBase
+public class StepGas : StepBase
 {
     private void OnEnable()
     {

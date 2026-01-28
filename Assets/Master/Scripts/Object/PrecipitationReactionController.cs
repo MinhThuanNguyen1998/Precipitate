@@ -7,6 +7,7 @@ public class PrecipitationReactionController : MonoBehaviour
 {
     [SerializeField] LiquidVolume m_LiquidVolumeAgNo3;
     [SerializeField] LiquidVolume m_LiquidVolumeNaCl;
+    [SerializeField] Step_AgNo3_NaCl m_Step_AgNo3_NaCl;
     private float m_DefaultSparklingAmount = 0.3f;
     private float m_MaxValueSparklingAmount = 0.6f;
     private float m_PrecipitateDuration = 4f;
@@ -30,7 +31,9 @@ public class PrecipitationReactionController : MonoBehaviour
     }
     private void ReceiveFilling(LiquidType liquidType)
     {
+        if (m_HasPrecipitated) return;
         m_FilledLiquid = liquidType;
+        m_Step_AgNo3_NaCl.GoToNextStep();
     }
     private void TryReact()
     {

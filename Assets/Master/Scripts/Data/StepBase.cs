@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public abstract class StepAtomicBase : MonoBehaviour
+public abstract class StepBase : MonoBehaviour
 {
     public int TotalSteps { get; protected set; }
     public int CurretSteps { get; protected set; }

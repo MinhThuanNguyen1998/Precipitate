@@ -50,7 +50,6 @@ public class PipetStateController : MonoBehaviour
         if (!m_PipetTrigger.IsInTube) return;
         m_FilledLiquid = m_PipetTrigger.FilledLiquidType;
         OnLiquidFilled?.Invoke(m_PipetTrigger.FilledLiquidType);
-        Debug.Log("Filled: " + m_FilledLiquid);
         SetState(PipetState.Filled);
     }
     private void TryRelease()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StepAtomicManager : MonoBehaviour
 {
-    [SerializeField] private StepSolid m_StepSolid;
+    [SerializeField] private Step_AgNo3_NaCl m_StepSolid;
     [SerializeField] private StepLiquid m_Liquid;
     [SerializeField] private StepGas m_StepGas;
 
