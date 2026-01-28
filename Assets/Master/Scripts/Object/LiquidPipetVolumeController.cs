@@ -5,7 +5,7 @@ using UnityEngine;
 public class LiquidPipetVolumeController : MonoBehaviour
 {
     [SerializeField] private LiquidVolume m_LiquidVolume;
-    private float m_DurationTime = 4f;
+    private float m_DurationTime = 1f;
     private float m_MinLevelVolume = 0f;
     private float m_MaxLevelVolume = 0.5f;
 

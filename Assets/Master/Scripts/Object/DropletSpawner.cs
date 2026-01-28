@@ -1,14 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DropletSpawner : MonoBehaviour
 {
     [SerializeField] private Transform m_AnchorDropletParent;
     [SerializeField] private GameObject m_DropletPrefab;
-
+    private int m_DropletCount;
     private void OnEnable() => PipetStateController.OnDropletSpawned += SpawnDroplet;
     private void OnDisable() => PipetStateController.OnDropletSpawned -= SpawnDroplet;
-
-
     public void SpawnDroplet()
     {
         if (m_DropletPrefab != null && m_AnchorDropletParent != null)
@@ -17,5 +15,6 @@ public class DropletSpawner : MonoBehaviour
             GameObject drop = Instantiate(m_DropletPrefab, m_AnchorDropletParent.position, Quaternion.identity);
             drop.transform.SetParent(m_AnchorDropletParent, true);
         }
+
     }
 }

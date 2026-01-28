@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df800e932ee28b45b4b284261558a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PipetController: {fileID: 8002049843904375258}
+  m_PipetStateController: {fileID: 8002049843904375258}
 --- !u!114 &8002049843904375258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PipetTrigger: {fileID: 7918850501055302688}
-  PipetState: 0
 --- !u!1 &3041568798386073964
 GameObject:
   m_ObjectHideFlags: 0

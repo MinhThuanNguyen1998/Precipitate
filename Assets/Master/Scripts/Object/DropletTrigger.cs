@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DropletTrigger : BaseTrigger
 {
-    public static event Action<LiquidType> OnLiquidReacted;
+    public static event Action<LiquidType> OnLiquidDropletized;
     public LiquidType CurrentLiquid { get; private set; }
     protected override void OnEnter(Collider other)
     {
@@ -12,10 +12,7 @@ public class DropletTrigger : BaseTrigger
             var tubeLiquid = other.GetComponent<TubeLiquid>();
             CurrentLiquid = tubeLiquid != null ? tubeLiquid.LiquidType : LiquidType.None;
             Debug.Log("Pipet get current liquid is:" + CurrentLiquid);
-            if(FilledLiquidType.Liquid != CurrentLiquid)
-            {
-                OnLiquidReacted?.Invoke(CurrentLiquid);
-            }
+            OnLiquidDropletized?.Invoke(CurrentLiquid);
         }
     }
     private bool IsOtherCollider(Collider other)

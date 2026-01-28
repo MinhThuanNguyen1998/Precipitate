@@ -3,22 +3,42 @@ using DG.Tweening;
 using LiquidVolumeFX;
 using UnityEngine;
 
-public class Precipitation : MonoBehaviour
+public class PrecipitationReactionController : MonoBehaviour
 {
     [SerializeField] LiquidVolume m_LiquidVolumeAgNo3;
     [SerializeField] LiquidVolume m_LiquidVolumeNaCl;
-
     private float m_DefaultSparklingAmount = 0.3f;
     private float m_MaxValueSparklingAmount = 0.6f;
     private float m_PrecipitateDuration = 4f;
-
     private bool m_HasPrecipitated = false;
-    private void OnEnable() => DropletTrigger.OnLiquidReacted += Precipitate;
-    private void OnDisable() => DropletTrigger.OnLiquidReacted -= Precipitate;
-
-    private void Precipitate(LiquidType liquidType)
+    private LiquidType? m_DropletLiquid = null;
+    private LiquidType? m_FilledLiquid = null;
+    private void OnEnable() 
+    {
+        DropletTrigger.OnLiquidDropletized += ReceiveDroplet;
+        PipetStateController.OnLiquidFilled += ReceiveFilling;
+    }
+    private void OnDisable() 
+    {
+        DropletTrigger.OnLiquidDropletized -= ReceiveDroplet;
+        PipetStateController.OnLiquidFilled -= ReceiveFilling;
+    }
+    private void ReceiveDroplet(LiquidType liquidType)
+    {
+        m_DropletLiquid = liquidType;
+        TryReact();
+    }
+    private void ReceiveFilling(LiquidType liquidType)
+    {
+        m_FilledLiquid = liquidType;
+    }
+    private void TryReact()
     {
         if (m_HasPrecipitated) return;
+        if (m_DropletLiquid.Value != m_FilledLiquid.Value) Precipitate(m_DropletLiquid.Value);
+    }
+    private void Precipitate(LiquidType liquidType)
+    {
         LiquidVolume targetLiquid =
             liquidType == LiquidType.AgNO3 ? m_LiquidVolumeAgNo3 :
             liquidType == LiquidType.NaCl ? m_LiquidVolumeNaCl :
@@ -34,6 +54,5 @@ public class Precipitation : MonoBehaviour
         {
             m_HasPrecipitated = true;
         });
-
     }
 }

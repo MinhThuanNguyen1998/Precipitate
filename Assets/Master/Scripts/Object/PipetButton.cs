@@ -2,20 +2,19 @@ using UnityEngine;
 using DG.Tweening;
 public class PipetButton : MonoBehaviour
 {
-    [SerializeField] PipetStateController m_PipetController;
+    [SerializeField] PipetStateController m_PipetStateController;
     private Vector3 m_OriginalScale;
     private Tween m_ClickTween;
     private void Awake()
     {
         m_OriginalScale = transform.localScale;
     }
-
     private void OnMouseDown()
     {
         //Debug.Log("Click");
         PlayClickAnimation();
         if (MouseDragLock.IsBlocked) return;
-        m_PipetController.CheckStateWhenPipetClickButton();
+        m_PipetStateController.CheckStateWhenPipetClickButton();
     }
     private void OnMouseUp()
     {
@@ -25,7 +24,6 @@ public class PipetButton : MonoBehaviour
     {
         if (m_ClickTween != null && m_ClickTween.IsActive())
             m_ClickTween.Kill();
-
         float smallScale = 0.85f;
         m_ClickTween = transform
             .DOScale(m_OriginalScale * smallScale, 0.08f)

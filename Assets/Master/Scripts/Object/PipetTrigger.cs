@@ -3,7 +3,7 @@ using UnityEngine;
 public class PipetTrigger : BaseTrigger
 {
     public bool IsInTube { get; private set; }
-    public LiquidType CurrentLiquid { get; private set; }
+    public LiquidType FilledLiquidType { get; private set; }
     protected override void OnEnter(Collider other)
     {
         if (IsOtherCollider(other))
@@ -11,7 +11,7 @@ public class PipetTrigger : BaseTrigger
             //Debug.Log("TriggerEnter");
             IsInTube = true;
             var tubeLiquid = other.GetComponent<TubeLiquid>();
-            CurrentLiquid = tubeLiquid != null? tubeLiquid.LiquidType: LiquidType.None;
+            FilledLiquidType = tubeLiquid != null? tubeLiquid.LiquidType: LiquidType.None;
         }
     }
     protected override void OnExit(Collider other)
