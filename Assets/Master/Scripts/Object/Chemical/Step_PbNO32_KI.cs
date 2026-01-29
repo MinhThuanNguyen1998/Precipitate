@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class StepLiquid : StepBase
+public class Step_PbNO32_KI : StepBase
 {
     private void OnEnable()
     {
-        TotalSteps = 3;
+        TotalSteps = 2;
         StartStep();
-        Debug.Log("StepLiquid");
+       
     }
     protected override void ExecuteCurrentStep()
     {
@@ -14,17 +14,14 @@ public class StepLiquid : StepBase
         switch (CurretSteps)
         {
             case 0:
-                Debug.Log("Liquid step 0: Place the flask at Bunsen bunrner's position" );
+                Debug.Log("Pb(NO3)2_KI step 0 : Use a dropper to take a small amount of the prepared");
                 StepTutorialManager.Instance.GotoState(2);
                 break;
             case 1:
-                Debug.Log("Liquid step 1: Turn on the lighter");
+                Debug.Log("Pb(NO3)2_KI: Review reaction ");
                 StepTutorialManager.Instance.GotoState(3);
                 break;
-            case 2:
-                Debug.Log("Liquid step 2: Use the magnifying");
-                StepTutorialManager.Instance.GotoState(4);
-                break;
+
         }
     }
 }

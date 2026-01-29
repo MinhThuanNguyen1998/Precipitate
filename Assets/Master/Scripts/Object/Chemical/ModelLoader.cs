@@ -5,7 +5,7 @@ public class ModelLoader : MonoBehaviour
 {
     [Header("3 Model Prefabs")]
     [SerializeField] private GameObject m_AgNO3_NaCl;
-    [SerializeField] private GameObject m_PbN032_KI;
+    [SerializeField] private GameObject m_PbNO32_KI;
     [SerializeField] private GameObject m_AgNO3_NaOH;
     [SerializeField] private GameObject m_CuSO4_NaOH;
     [SerializeField] private GameObject m_FeSO4_NaOH;
@@ -28,7 +28,7 @@ public class ModelLoader : MonoBehaviour
                 prefabToLoad = m_AgNO3_NaCl;
                 break;
             case LabState.PbNO32_KI:
-                prefabToLoad = m_PbN032_KI;
+                prefabToLoad = m_PbNO32_KI;
                 break;
             case LabState.AgNO3_NaOH:
                 prefabToLoad = m_AgNO3_NaOH;
