@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -22,7 +23,7 @@ public class LabMode : MonoBehaviour
     private void OnStateChanged(int index)
     {
         string selectedState = m_DropDownStateOfMatter.options[index].text;
-        m_ModelLoader?.LoadStateModel(selectedState);
-        Debug.Log("SelectedState:" + selectedState);
+        Debug.Log($"[LabMode] Selected index: {index}");
+        m_ModelLoader.LoadStateModel((LabState)index);
     }
 }

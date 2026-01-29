@@ -4167,6 +4167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgNO3_NaCl: {fileID: 693037251085322, guid: e6e2ea6f2bc7b7841a31d7a115defb3f, type: 3}
+  m_PbN032_KI: {fileID: 0}
+  m_AgNO3_NaOH: {fileID: 0}
+  m_CuSO4_NaOH: {fileID: 0}
+  m_FeSO4_NaOH: {fileID: 0}
 --- !u!114 &332771442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5434,7 +5438,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 0, y: 200}
+  m_SizeDelta: {x: 0, y: 287.999}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &446718898
 MonoBehaviour:
@@ -13953,7 +13957,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "AgNo3 v\xE0 NaCl"
+  m_text: "AgNO3 v\xE0 NaCl"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7362f3990db07954a9570669bf1a5bdd, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7362f3990db07954a9570669bf1a5bdd, type: 2}
@@ -19676,10 +19680,19 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: "AgNo3 v\xE0 NaCl"
+    - m_Text: "AgNO3 v\xE0 NaCl"
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 
+    - m_Text: " Pb(NO3)2 v\xE0 KI"
+      m_Image: {fileID: 0}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    - m_Text: "AgNO3 v\xE0 NAOH"
+      m_Image: {fileID: 0}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    - m_Text: "CuSO4 v\xE0 NAOH"
+      m_Image: {fileID: 0}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    - m_Text: "FeSO4 v\xE0 NAOH"
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
@@ -26883,7 +26896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AGNO3_NACL
+  m_text: "AgN03 v\xE0 NaCl"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7362f3990db07954a9570669bf1a5bdd, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7362f3990db07954a9570669bf1a5bdd, type: 2}
@@ -31290,7 +31303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &3271401680271360524
 CanvasRenderer:
   m_ObjectHideFlags: 0
